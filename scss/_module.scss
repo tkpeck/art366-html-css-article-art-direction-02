@@ -12,7 +12,7 @@ Module Rules
 }
 
 nav[role="navigation"] {
-	padding-bottom: $gutters/2;
+	padding: $gutters/4 $gutters;
 }
 
 nav[role="navigation"] ul {
@@ -26,14 +26,16 @@ nav[role="navigation"] ul a {
     @include body-font-regular;
     margin-left: $gutters;
     text-decoration: none;
+	transition: color 400ms linear;
 }
 
 nav[role="navigation"] ul a:hover {
     color: lighten($color, 60%);
+	transition: color 400ms linear;
 }
 
 header[role="banner"] {
-    background-color: $color;
+    background-color: $accent-color2;
     color: $background-color;
     padding: $gutters;
 }
@@ -41,21 +43,16 @@ header[role="banner"] {
 header[role="banner"] h1 {
     color: $background-color;
 	line-height: .25;
+	margin-top: $gutters/2;
 }
 
 header[role="banner"] p {
-    @include fontSize(23px);
+    @include fontSize(18px);
+	text-align: right;
 }
 
-header[role="banner"] a {
-    color: $background-color;
-    @include body-font-italic;
-    transition: color 400ms linear;
-}
-
-header[role="banner"] a:hover {
-    color: darken($background-color, 12%);
-    transition: color 400ms linear;
+.contact {
+	text-align: right;
 }
 
 .contact svg {
@@ -69,26 +66,36 @@ header[role="banner"] a:hover {
 }
 
 .contact a:hover svg path {
-	fill: darken($background-color, 12%);
+	fill: $accent-color;
 	transition: fill 400ms linear;
 }
 
+main[role="main"] h1 {
+	color: $accent-color2;
+	padding: 0 $gutters;
+}
+
 main[role="main"] h2 {
-	background-color: $color;
+	background-color: $accent-color2;
 	color: $background-color;
 	padding: $gutters;
 }
 
 .intro p:first-of-type {
 	@include fontSize(24px);
+	margin-top: $gutters/2;
+	margin-bottom: $gutters/2;
 }
 
 footer[role="contentinfo"] {
-	background-color: $color;
+	background-color: $accent-color2;
 	color: $background-color;
 	padding: $gutters/8 $gutters;
 }
 
 footer[role="contentinfo"] p {
-	text-align: center;
+	@include fontSize(14px);
+	line-height: $gutters;
+	margin: 0;
+	text-align: right;
 }

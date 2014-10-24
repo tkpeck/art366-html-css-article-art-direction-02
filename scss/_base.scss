@@ -14,8 +14,12 @@ body {
     @include fontSize(18px);
     margin: 0 auto;
     max-width: 500px;
-	padding: $gutters;
     width: 100%;
+}
+
+h2, h3 {
+	padding-left: $gutters;
+	padding-right: $gutters;
 }
 
 h1 {
@@ -25,12 +29,24 @@ h1 {
 
 h2 {
     @include headline-font;
-	text-align: center;
+	letter-spacing: 2px;
 }
 
-img {
+h3 {
+	color: lighten($accent-color2,5%);
+	margin-bottom: $gutters/2;
+}
+
+h3 + p {
+	margin-top: 0;
+}
+
+img, iframe {
+	box-sizing: border-box;
 	max-width: 100%;
 	height: auto;
+	padding-left: $gutters;
+	padding-right: $gutters;
 }
 
 main ul li {
@@ -45,4 +61,23 @@ p + ul, {
 a {
 	color: $background-color;
 	text-decoration: none;
+}
+
+main p {
+	padding-left: $gutters;
+	padding-right: $gutters;
+}
+
+blockquote p {
+	@include fontSize(16px);
+	@include body-font-italic;
+	margin: 0;
+	padding: 0;
+}
+
+cite {
+	@include fontSize(14px);
+	@include body-font-bold;
+	margin: 0;
+	padding-left: $gutters*2;
 }
